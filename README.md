@@ -6,6 +6,8 @@ atlassian_plugins - hash of atlassian plugins to download
 require_class - plugins requires the defined class
 
 ## hiera example:
+
+'''
 atlassian_plugins::require_class: 'avstapp'
 atlassian_plugins::restart_instance_command: 'service jira restart'
 atlassian_plugins::atlassian_plugin:
@@ -19,3 +21,4 @@ atlassian_plugins::atlassian_plugin:
         custom_commands:
             - "sed -ie 's/filelog$/filelog, jsonlog/g' /opt/jira/install/atlassian-jira/WEB-INF/classes/log4j.properties"
             - "sed -ie 's/filelog,/filelog, jsonlog,/g' /opt/jira/install/atlassian-jira/WEB-INF/classes/log4j.properties"
+'''
