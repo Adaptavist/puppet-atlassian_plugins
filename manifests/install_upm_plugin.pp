@@ -3,16 +3,17 @@ define atlassian_plugins::install_upm_plugin(
     $plugin_key,
     $marketplace_user,
     $marketplace_pass,
-    $plugin_version      = 'latest',
+    $plugin_version      = '',
     $instance_admin_user = undef,
     $instance_admin_pass = undef,
     $application_url     = undef,
     $license             = undef,
     $custom_commands     = [],
+    $application_version = '',
     $guard_file_path     = "/etc/puppet/${name}"
 ){
     exec { "install_plugin_${name}":
-        command => "bash --login -c 'atlassian_plugin_installer \"${instance_admin_user}\" \"${instance_admin_pass}\" \"${application_url}\" \"${plugin_key}\" \"${plugin_version}\" \"${marketplace_user}\" \"${marketplace_pass}\" \"${license}\"'",
+        command => "bash --login -c 'atlassian_plugin_installer \"${instance_admin_user}\" \"${instance_admin_pass}\" \"${application_url}\" \"${plugin_key}\" \"${plugin_version}\" \"${marketplace_user}\" \"${marketplace_pass}\" \"${license}\" \"${application_version}\" '",
         unless  => ["test -f ${guard_file_path}"],
         require => Package['atlassian_plugin_installer']
     }
