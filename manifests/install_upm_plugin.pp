@@ -10,10 +10,11 @@ define atlassian_plugins::install_upm_plugin(
     $license             = undef,
     $custom_commands     = [],
     $application_version = '',
+    $application         = 'jira',
     $guard_file_path     = "/etc/puppet/${name}"
 ){
     exec { "install_plugin_${name}":
-        command => "bash --login -c 'atlassian_plugin_installer \"${instance_admin_user}\" \"${instance_admin_pass}\" \"${application_url}\" \"${plugin_key}\" \"${plugin_version}\" \"${marketplace_user}\" \"${marketplace_pass}\" \"${license}\" \"${application_version}\" '",
+        command => "bash --login -c 'atlassian_plugin_installer \"${instance_admin_user}\" \"${instance_admin_pass}\" \"${application_url}\" \"${plugin_key}\" \"${plugin_version}\" \"${marketplace_user}\" \"${marketplace_pass}\" \"${license}\" \"${application_version}\" \"${application}\" '",
         unless  => ["test -f ${guard_file_path}"],
         require => Package['atlassian_plugin_installer']
     }

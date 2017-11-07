@@ -1,5 +1,5 @@
 name 'adaptavist-atlassian_plugin'
-version '1.0.1'
+version '1.0.2'
 source 'https://github.com/Adaptavist/puppet-atlassian_plugin.git'
 author 'adaptavist'
 summary 'atlassian_plugin puppet module' 
