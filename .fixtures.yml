@@ -3,4 +3,4 @@ fixtures:
     stdlib:
       repo: 'https://github.com/Adaptavist/puppet-stdlib'
   symlinks:
-    atlassian_plugin: "#{source_dir}"
+    atlassian_plugins: "#{source_dir}"
