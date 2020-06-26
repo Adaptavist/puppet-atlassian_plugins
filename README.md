@@ -1,4 +1,5 @@
 # Atlassian plugin download and configuration
+[![Build Status](https://travis-ci.org/Adaptavist/puppet-atlassian_plugin.svg?branch=master)](https://travis-ci.org/Adaptavist/puppet-atlassian_plugin)
 
 Params
 
